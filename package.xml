@@ -1,23 +1,16 @@
 <?xml version="1.0"?>
 <package format="2">
-  	<name>driver_control</name>
+  	<name>robotec_velocity_controller</name>
   	<version>1.0.0</version>
-  	<description>Driver control for robots created with ROS</description>
+  	<description>Velocity controller for robots powered with ROS</description>
 
   	<!-- One maintainer tag required, multiple allowed, one person per tag -->
-  	<maintainer email="illya.shvarov@gmail.com">THOSE EYES</maintainer>
-
+  	<maintainer email="illya.shvarov@gmail.com">Illia Shvarov</maintainer>
 
   	<!-- One license tag required, multiple allowed, one license per tag -->
   	<license>Apache License 2.0</license>
 
-
-  	<!-- Url tags are optional, but multiple are allowed, one per tag -->
-  	<url type="website">https://www.rosroboticslearning.com/ros-control</url>
-  	<url type="website">https://github.com/bandasaikrishna/ros_control_example</url>
-
-
-	<!-- Dependencies can be catkin packages or system dependencies -->
+	<!-- Build dependencies -->
 	<buildtool_depend>catkin</buildtool_depend>
 	<build_depend>controller_manager</build_depend>
 	<build_depend>roscpp</build_depend>
@@ -25,6 +18,8 @@
 	<build_depend>std_msgs</build_depend>
 	<build_depend>std_srvs</build_depend>
 	<build_depend>sensor_msgs</build_depend>
+
+	<!-- Compilation-time dependencies -->
 	<build_export_depend>sensor_msgs</build_export_depend>
 	<build_export_depend>controller_manager</build_export_depend>
 	<build_export_depend>roscpp</build_export_depend>
@@ -33,6 +28,8 @@
  	<build_export_depend>std_srvs</build_export_depend>
  	<build_depend>message_generation</build_depend>
 	<build_depend>dynamic_reconfigure</build_depend>
+
+	<!-- Execution dependencies -->
 	<exec_depend>dynamic_reconfigure</exec_depend>
   	<exec_depend>message_runtime</exec_depend>
   	<exec_depend>controller_manager</exec_depend>

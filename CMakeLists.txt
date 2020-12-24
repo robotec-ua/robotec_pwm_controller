@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(driver_control)
+project(robotec_velocity_controller)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
@@ -12,15 +12,9 @@ find_package(catkin REQUIRED COMPONENTS
 	sensor_msgs
 )
 
-################################################
-## Declare ROS messages, services and actions ##
-################################################
-
 ###################################
 ## catkin specific configuration ##
 ###################################
-
-##s
 catkin_package()
 
 ###########
@@ -29,10 +23,10 @@ catkin_package()
 
 ## Include essential directories
 include_directories(
- include
+ include/${PROJECT_NAME}
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(2WControl src/RobotHWImplementation.cpp src/DriverControlNode.cpp)
-add_dependencies(2WControl ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(2WControl ${catkin_LIBRARIES})
+add_executable(velocity_controller src/robot_hardware.cpp src/controller_node.cpp)
+add_dependencies(velocity_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(velocity_controller ${catkin_LIBRARIES})
