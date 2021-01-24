@@ -1,11 +1,5 @@
 <?xml version="1.0"?>
 <launch>
-	<!-- ROS Serial package assures communication between Arduino and ROS -->
-	<node pkg="rosserial_python" name="rosserial" type="serial_node.py" output="screen">
-        <param name="port" value="/dev/ttyUSB0" />
-        <param name="baud" value="57600" />
-    </node>
-
 	<!-- diff_drive_controller configuration file -->
 	<rosparam file="$(find driver_control)/config/diff_drive_controller.yaml" command="load"/>
 
